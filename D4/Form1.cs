@@ -20,18 +20,10 @@ namespace D4
 
         private void startButton_Click(object sender, EventArgs e)
         {
-            for(int i=1;i<int.Parse(numberOfReceivers.Text);i++)
-            {
-               
-                Receiver receiver = new Receiver();
-                Thread th = new Thread(o => 
-                { 
-                    receiver.Start(1000 + i);
-                   
-                });   
-            }
-           
-           
+            Receiver receiver = new Receiver();
+            receiver.Start();
+            Tesseract tesseract = new Tesseract();
+            tesseract.ReadData(FileInfo.filePath);
         }
     }
 }
