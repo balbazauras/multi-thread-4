@@ -56,7 +56,9 @@
     <Compile Include="Info.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sender.cs" />
+    <Compile Include="Server_receiver.cs" />
+    <Compile Include="Server_sender.cs" />
+    <Compile Include="Tesseract.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

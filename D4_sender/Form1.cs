@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -29,8 +30,17 @@ namespace D4_sender
 
         private void sendButton_Click(object sender, EventArgs e)
         {
-            Sender send = new Sender(fileName);
-            send.Send();
+            Thread th1 = new Thread (o => 
+            { Server_sender send = new Server_sender(fileName);
+              send.Send();
+            });
+            Thread th2 = new Thread(o =>
+            {
+                Server_receiver server_Receiver = new Server_receiver();
+                server_Receiver.Start();
+            });
+            th1.Start();
+            th2.Start();
         }
     }
 }

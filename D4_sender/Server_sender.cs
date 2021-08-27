@@ -10,12 +10,12 @@ using System.Windows.Forms;
 
 namespace D4_sender
 {
-    class Sender
+    class Server_sender
     {
         private string fileName;
 
 
-        public Sender(string fileName)
+        public Server_sender(string fileName)
         {
             this.fileName = fileName;
 

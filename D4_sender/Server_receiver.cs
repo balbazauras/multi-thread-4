@@ -8,20 +8,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace D4
+namespace D4_sender
 {
-    
-    class Receiver
+    class Server_receiver
     {
-            private static TcpListener listener = null;
-            private string downloadsFolder= @"C:\Users\Whis\Desktop\Atsiskaitymas\result\";
-            public static string Message = "Stopped";
+        private static TcpListener listener = null;
+        private string downloadsFolder = @"C:\Users\Whis\Desktop\Atsiskaitymas\result_server\";
+        public static string Message = "Stopped";
 
-            public void Start()
-            {
+        public void Start()
+        {
             try
             {
-                listener = new TcpListener(IPAddress.Any, 1000);
+                listener = new TcpListener(IPAddress.Any, 1001);
                 listener.Start();
                 MessageBox.Show("Started");
                 while (true)
@@ -37,8 +36,6 @@ namespace D4
                         string fileName = Encoding.ASCII.GetString(fileNameBytes, 0, fileNameLength);
 
                         string file = $"{downloadsFolder}{fileName}";
-                        FileInfo.fileName = fileName;
-                        FileInfo.filePath = file;
                         using (var output = File.Create(file))
                         {
                             MessageBox.Show("Saving file...");
@@ -51,8 +48,6 @@ namespace D4
                             }
                         }
                         MessageBox.Show("Saving file complete");
-                        Tesseract tesseract = new Tesseract();
-                        tesseract.ReadData(FileInfo.filePath);
                     }
                 }
             }
@@ -60,20 +55,8 @@ namespace D4
             {
                 Message = exc.Message;
             }
-            finally
-            {
-                if (listener != null)
-                    listener.Stop();
-                MessageBox.Show("Stopped");
-            }
-            }
 
-            public void Stop()
-            {
-                listener.Stop();
-                listener = null;
-                Message = "Stopped";
-            }
         }
     }
+}
 
