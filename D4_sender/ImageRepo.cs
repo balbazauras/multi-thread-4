@@ -9,27 +9,10 @@ namespace D4_sender
 {
     class ImageRepo
     {
+        string[] list = Directory.GetFiles(@"C:\Users\Whis\Desktop\Atsiskaitymas\source\");
+        List<List<string>> filepaths = new List<List<string>>();
         //@"C:\Users\Whis\Desktop\Atsiskaitymas\source\"
-        public static string [][] Distribution(int numberOfReceivers)
-        {
-            int counter=0;
-            string[] list= Directory.GetFiles(@"C:\Users\Whis\Desktop\Atsiskaitymas\source\");
 
-
-               // people.Add(new Person { Name = "Person #" + (i + 1) });
-            var receivers = new List<Info>();
-            for (int i = 0; i < numberOfReceivers; i++)
-            {
-               foreach(string l  in list)
-                {
-                  
-
-                }
-            }
-
-
-            return null;
         }
     }
-    //+ list.Length % numberOfReceivers
-}
+

@@ -30,17 +30,22 @@ namespace D4_sender
 
         private void sendButton_Click(object sender, EventArgs e)
         {
-            Thread th1 = new Thread (o => 
-            { Server_sender send = new Server_sender(fileName);
-              send.Send();
-            });
-            Thread th2 = new Thread(o =>
+            for(int i=0;i< int.Parse(numberOfReceivers.Text); i++)
             {
-                Server_receiver server_Receiver = new Server_receiver();
-                server_Receiver.Start();
-            });
-            th1.Start();
-            th2.Start();
+                Thread th1 = new Thread(o =>
+                {
+                    Server_sender send = new Server_sender(fileName);
+                    send.Send();
+                });
+                Thread th2 = new Thread(o =>
+                {
+                    Server_receiver server_Receiver = new Server_receiver();
+                    server_Receiver.Start();
+                });
+                th1.Start();
+                th2.Start();
+            }
+            
         }
     }
 }

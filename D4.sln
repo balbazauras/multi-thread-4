@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31613.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D4", "D4\D4.csproj", "{1A311263-6076-432E-AD91-18C05A0E3239}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D4_client", "D4\D4_client.csproj", "{1A311263-6076-432E-AD91-18C05A0E3239}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D4_sender", "D4_sender\D4_sender.csproj", "{770256DA-FAC8-4A67-8B18-BCB0FD0AFF9B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D4_server", "D4_sender\D4_server.csproj", "{770256DA-FAC8-4A67-8B18-BCB0FD0AFF9B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
